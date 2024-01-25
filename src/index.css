@@ -1,13 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h1 {
+  @apply text-2xl font-bold text-dark dark:text-light;
+}
+h2 {
+  @apply text-xl font-semibold text-dark dark:text-light;
+}
+h3 {
+  @apply text-lg font-semibold text-dark dark:text-light;
+}
+p {
+  @apply text-base text-dark dark:text-light opacity-60;
+}
+small {
+  @apply text-xs text-dark dark:text-light opacity-60;
+}
+label {
+  @apply text-base text-dark dark:text-light opacity-60;
+}
+input {
+  @apply text-base text-dark dark:text-light;
+}
+button {
+  @apply text-base font-semibold;
+}
+
+/* Custom class */
+.vertical-navbar {
+  @apply hidden lg:flex px-sm py-md bg-light dark:bg-dark border-r border-muted h-screen w-0 lg:w-64;
+}
+.card {
+  @apply bg-light dark:bg-dark border border-muted rounded-lg;
 }
