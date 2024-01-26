@@ -4,13 +4,17 @@ module.exports = {
   darkMode: "class",
   theme: {
     fontSize: {
-      xs: ".55vw",
-      sm: ".825vw",
-      base: "1vw",
-      lg: "1.25vw",
-      xl: "1.5vw",
-      "2xl": "1.75vw",
-      "3xl": "2vw",
+      xs: ".5rem",
+      sm: ".75rem",
+      base: "1rem",
+      lg: "1.25rem",
+      xl: "1.5rem",
+      "2xl": "1.75rem",
+      "3xl": "2rem",
+      "4xl": "2.25rem",
+    },
+    fontFamily: {
+      lato: ["Lato", "sans-serif"],
     },
     colors: {
       transparent: "transparent",

@@ -9,6 +9,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @apply text-base text-dark dark:text-light font-lato;
 }
 
 code {
@@ -52,5 +54,11 @@ button {
   @apply px-lg mt-lg;
 }
 .card {
-  @apply bg-light dark:bg-dark rounded-lg;
+  @apply bg-muted-light dark:bg-dark rounded-lg px-md py-lg;
+}
+.icon {
+  @apply h-6 w-6 text-dark dark:text-light;
+}
+.glassmorph {
+  @apply bg-light dark:bg-dark rounded-md bg-clip-padding backdrop-filter backdrop-blur bg-opacity-10 border border-muted;
 }
