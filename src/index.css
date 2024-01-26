@@ -43,8 +43,14 @@ button {
 
 /* Custom class */
 .vertical-navbar {
-  @apply hidden lg:flex px-sm py-md bg-light dark:bg-dark border-r border-muted h-screen w-0 lg:w-64;
+  @apply hidden lg:flex px-md py-lg bg-light dark:bg-dark h-screen w-0 lg:w-64 border-r border-muted;
+}
+.header-menu {
+  @apply flex items-center justify-end px-md py-lg bg-light dark:bg-dark border-b border-muted;
+}
+.wrapper {
+  @apply px-lg mt-lg;
 }
 .card {
-  @apply bg-light dark:bg-dark border border-muted rounded-lg;
+  @apply bg-light dark:bg-dark rounded-lg;
 }
