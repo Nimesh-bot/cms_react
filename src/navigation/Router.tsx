@@ -16,12 +16,25 @@ const Loadable =
 export default function Router() {
   return useRoutes([
     {
-      path: "/",
+      path: "",
       element: <MainLayout />,
       children: [
         {
-          path: "/",
+          path: "",
           element: <Dashboard />,
+        },
+        {
+          path: "users",
+          children: [
+            {
+              path: "",
+              element: <UsersList />,
+            },
+            {
+              path: "add",
+              element: <UsersAddNew />,
+            },
+          ],
         },
       ],
     },
@@ -29,3 +42,5 @@ export default function Router() {
 }
 
 const Dashboard = Loadable(React.lazy(() => import("../pages/Dashboard")));
+const UsersList = Loadable(React.lazy(() => import("../pages/Users/List")));
+const UsersAddNew = Loadable(React.lazy(() => import("../pages/Users/AddNew")));

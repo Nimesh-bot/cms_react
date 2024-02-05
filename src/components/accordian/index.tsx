@@ -11,13 +11,15 @@ const MenuAccordian = (props: MenuAccordianProps) => {
 
   return (
     <div className="flex flex-col gap-y-4 flex-1">
-      <div className="flex justify-between items-center">
+      <div
+        className="flex justify-between items-center cursor-pointer"
+        onClick={() => setShow(!show)}
+      >
         {props.element}
         <ChevronRightIcon
           className={`w-3 h-3 mr-xs ${
             show && "rotate-90"
           } transform transition-all`}
-          onClick={() => setShow(!show)}
         />
       </div>
 

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  @apply text-base text-dark dark:text-muted-light font-lato;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -9,8 +13,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  @apply text-base text-dark dark:text-light font-lato;
 }
 
 code {
@@ -19,25 +21,25 @@ code {
 }
 
 h1 {
-  @apply text-2xl font-bold text-dark dark:text-light;
+  @apply text-2xl font-bold text-dark dark:text-muted-light;
 }
 h2 {
-  @apply text-xl font-semibold text-dark dark:text-light;
+  @apply text-xl font-semibold text-dark dark:text-muted-light;
 }
 h3 {
-  @apply text-lg font-semibold text-dark dark:text-light;
+  @apply text-lg font-semibold text-dark dark:text-muted-light;
 }
 p {
-  @apply text-base text-dark dark:text-light opacity-60;
+  @apply text-base text-dark dark:text-muted-light opacity-60;
 }
 small {
-  @apply text-xs text-dark dark:text-light opacity-60;
+  @apply text-xs text-dark dark:text-muted-light opacity-60;
 }
 label {
-  @apply text-base text-dark dark:text-light opacity-60;
+  @apply text-base text-dark dark:text-muted-light opacity-60;
 }
 input {
-  @apply text-base text-dark dark:text-light;
+  @apply text-base text-dark dark:text-muted-light;
 }
 button {
   @apply text-base font-semibold;
@@ -48,7 +50,7 @@ button {
   @apply hidden lg:flex lg:flex-col px-md py-lg bg-light dark:bg-dark h-screen w-0 lg:w-64 border-r border-muted;
 }
 .header-menu {
-  @apply flex items-center justify-end px-md py-lg bg-light dark:bg-dark border-b border-muted;
+  @apply flex items-center justify-end px-md py-lg bg-light dark:bg-dark border-b border-muted-light dark:border-muted-dark;
 }
 .wrapper {
   @apply px-lg mt-lg;
@@ -57,7 +59,7 @@ button {
   @apply bg-muted-light dark:bg-dark rounded-lg px-md py-lg;
 }
 .icon {
-  @apply h-6 w-6 text-dark dark:text-light;
+  @apply h-6 w-6 text-dark dark:text-muted-light;
 }
 .glassmorph {
   @apply bg-light dark:bg-dark rounded-md bg-clip-padding backdrop-filter backdrop-blur bg-opacity-10 border border-muted;

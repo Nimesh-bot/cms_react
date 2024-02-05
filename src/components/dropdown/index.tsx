@@ -44,8 +44,6 @@ const Dropdown = ({ children, dataDropDownToggle }: DropdownProps) => {
     const remainingWidth = screenWidth - dropdownX;
     const remainingHeight = screenHeight - dropdownY;
 
-    console.log("remaining width & height", remainingWidth, remainingHeight);
-
     return {
       top: remainingHeight < 180 ? `${dropdownY - 180}px` : `90%`,
       left: remainingWidth < 500 ? `${dropdownX - 160}px` : `${dropdownX}px`,

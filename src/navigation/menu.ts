@@ -14,6 +14,7 @@ export interface MenuItem {
   >;
   group: string;
   children?: MenuItem[];
+  path?: string;
 }
 
 export const menu: MenuItem[] = [
@@ -22,6 +23,7 @@ export const menu: MenuItem[] = [
     title: "Dashboard",
     icon: HomeIcon,
     group: "main",
+    path: "/",
   },
   {
     id: "pages",
@@ -40,12 +42,14 @@ export const menu: MenuItem[] = [
             title: "List",
             icon: ListBulletIcon,
             group: "pages",
+            path: "/users/",
           },
           {
             id: "new",
             title: "New",
             icon: UserPlusIcon,
             group: "pages",
+            path: "/users/add",
           },
         ],
       },

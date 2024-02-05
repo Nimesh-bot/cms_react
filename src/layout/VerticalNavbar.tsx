@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { MenuAccordian } from "../components/accordian";
 import { menu, MenuItem } from "../navigation/menu";
 
 const VerticalNavbar = () => {
   const [menuItems, setMenuItems] = useState({} as any);
+  const navigate = useNavigate();
 
   useEffect(() => {
     type GroupedItems = Record<string, MenuItem[]>;
@@ -29,13 +31,19 @@ const VerticalNavbar = () => {
     setMenuItems(separatedItems);
   }, []);
 
+  const navigationHandler = (path: string | undefined) => {
+    if (path) {
+      navigate(path);
+    }
+  };
+
   return (
     <div className="vertical-navbar">
       {Object.keys(menuItems).map((group, index) => (
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full" key={index}>
           {group !== "main" && (
             <div className={`mb-md ${index > 0 && "mt-2xl"}`}>
-              <h3 className="text-muted-light text-base">
+              <h3 className="text-dark dark:text-light opacity-25 text-base">
                 {group.charAt(0).toUpperCase() + group.slice(1)}
               </h3>
             </div>
@@ -72,7 +80,10 @@ const VerticalNavbar = () => {
                                 (subChild: MenuItem, index: number) => (
                                   <div
                                     key={index}
-                                    className="flex gap-x-2 flex-1 items-center ml-sm"
+                                    className="flex gap-x-2 flex-1 items-center ml-sm cursor-pointer"
+                                    onClick={() =>
+                                      navigationHandler(subChild.path)
+                                    }
                                   >
                                     {subChild.icon && (
                                       <subChild.icon className="w-5 h-5" />
@@ -85,7 +96,8 @@ const VerticalNavbar = () => {
                           ) : (
                             <div
                               key={index}
-                              className="flex gap-x-2 items-center"
+                              className="flex gap-x-2 items-center cursor-pointer"
+                              onClick={() => navigationHandler(child.path)}
                             >
                               {child.icon && <child.icon className="w-5 h-5" />}
                               {child.title}
@@ -96,7 +108,10 @@ const VerticalNavbar = () => {
                     )}
                   />
                 ) : (
-                  <div className="flex gap-x-2 items-center">
+                  <div
+                    className="flex gap-x-2 items-center cursor-pointer"
+                    onClick={() => navigationHandler(item.path)}
+                  >
                     {item.icon && <item.icon className="w-5 h-5" />}
                     {item.title}
                   </div>
