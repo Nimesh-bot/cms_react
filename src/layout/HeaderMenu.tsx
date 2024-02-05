@@ -7,16 +7,19 @@ import {
 
 import Dropdown from "../components/dropdown";
 
+import JpFlag from "../assets/icons/flags/jp.png";
+import UsFlag from "../assets/icons/flags/us.png";
+
 const data = [
   {
     id: 1,
     name: "English",
-    icon: "../assets/icons/flags/en.png",
+    icon: UsFlag,
   },
   {
     id: 2,
     name: "Japanese",
-    icon: "../assets/icons/flags/jp.png",
+    icon: JpFlag,
   },
 ];
 

@@ -27,7 +27,7 @@ module.exports = {
       success: "#2EC4B6",
       warning: "#F2AF29",
       muted: {
-        light: "#eeeeee",
+        light: "#aeaeae",
         DEFAULT: "#14141515",
         dark: "#333333",
       },

@@ -45,7 +45,7 @@ button {
 
 /* Custom class */
 .vertical-navbar {
-  @apply hidden lg:flex px-md py-lg bg-light dark:bg-dark h-screen w-0 lg:w-64 border-r border-muted;
+  @apply hidden lg:flex lg:flex-col px-md py-lg bg-light dark:bg-dark h-screen w-0 lg:w-64 border-r border-muted;
 }
 .header-menu {
   @apply flex items-center justify-end px-md py-lg bg-light dark:bg-dark border-b border-muted;
