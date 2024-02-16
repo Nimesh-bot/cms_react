@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { MenuAccordian } from "../components/accordian";
 import { menu, MenuItem } from "../navigation/menu";
 
 const VerticalNavbar = () => {
+  const { t } = useTranslation(["translation", "common"]);
+
   const [menuItems, setMenuItems] = useState({} as any);
   const navigate = useNavigate();
 
@@ -40,7 +43,7 @@ const VerticalNavbar = () => {
                 style={{ marginLeft: `${marginLeft}px` }}
               >
                 {item.icon && <item.icon className="w-5 h-5" />}
-                {item.title}
+                {t(`${item.title}`)}
               </div>
             }
             items={renderMenuItems(item.children, marginLeft + 10)}
@@ -52,7 +55,7 @@ const VerticalNavbar = () => {
             style={{ marginLeft: `${marginLeft}px` }}
           >
             {item.icon && <item.icon className="w-5 h-5" />}
-            {item.title}
+            {t(`${item.title}`)}
           </div>
         )}
       </div>

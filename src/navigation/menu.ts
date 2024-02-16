@@ -20,33 +20,33 @@ export interface MenuItem {
 export const menu: MenuItem[] = [
   {
     id: "dashboard",
-    title: "Dashboard",
+    title: "menu.dashboard",
     icon: HomeIcon,
     group: "main",
     path: "/",
   },
   {
     id: "pages",
-    title: "Pages",
+    title: "menu.pages",
     icon: DocumentIcon,
     group: "pages",
     children: [
       {
         id: "users",
-        title: "Users",
+        title: "menu.users",
         icon: UserGroupIcon,
         group: "pages",
         children: [
           {
             id: "list",
-            title: "List",
+            title: "common.list",
             icon: ListBulletIcon,
             group: "pages",
             path: "/users/",
           },
           {
             id: "new",
-            title: "New",
+            title: "common.new",
             icon: UserPlusIcon,
             group: "pages",
             path: "/users/add",

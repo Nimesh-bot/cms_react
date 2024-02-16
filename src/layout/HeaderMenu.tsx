@@ -13,16 +13,20 @@ import { Theme } from "../context/themeContext";
 import { useThemeContext } from "../context/ThemeContextProvider";
 import { getSystemTheme } from "../utils/getSystemTheme";
 
+import i18n from "../i18n";
+
 const data = [
   {
     id: 1,
     name: "English",
     icon: UsFlag,
+    code: "en",
   },
   {
     id: 2,
     name: "Japanese",
     icon: JpFlag,
+    code: "jp",
   },
 ];
 
@@ -49,6 +53,11 @@ const HeaderMenu = () => {
     }
   };
 
+  const onChangeLanguage = (language: string) => {
+    localStorage.setItem("preference", JSON.stringify({ language: language }));
+    i18n.changeLanguage(language);
+  };
+
   return (
     <div className="header-menu sticky top-0 left-0">
       <ul className="flex items-center gap-x-4">
@@ -59,7 +68,11 @@ const HeaderMenu = () => {
               dropdown: (
                 <>
                   {data.map((item, index) => (
-                    <li key={index} className="w-44 cursor-pointer">
+                    <li
+                      key={index}
+                      className="w-44 cursor-pointer"
+                      onClick={() => onChangeLanguage(item.code)}
+                    >
                       <span className="flex items-center px-sm py-xs hover:bg-primary  hover:text-light">
                         <img
                           src={item.icon}
