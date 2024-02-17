@@ -47,10 +47,10 @@ button {
 
 /* Custom class */
 .vertical-navbar {
-  @apply hidden lg:flex lg:flex-col px-md py-lg bg-light dark:bg-dark h-screen w-0 lg:w-64 border-r border-muted;
+  @apply hidden lg:flex lg:flex-col py-lg bg-gradient h-screen w-0 lg:w-64  border-muted dark:border-muted-dark;
 }
 .header-menu {
-  @apply flex items-center justify-end px-md py-lg bg-light dark:bg-dark border-b border-muted-light dark:border-muted-dark;
+  @apply flex items-center justify-end px-md py-lg bg-gradient border-muted-light dark:border-muted-dark;
 }
 .wrapper {
   @apply px-lg mt-lg;
@@ -63,4 +63,7 @@ button {
 }
 .glassmorph {
   @apply bg-light dark:bg-dark rounded-md bg-clip-padding backdrop-filter backdrop-blur bg-opacity-10 border border-muted;
+}
+.bg-gradient {
+  @apply bg-gradient-to-br from-light-secondary to-light dark:from-dark-secondary dark:to-dark;
 }

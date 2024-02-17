@@ -27,7 +27,7 @@ const MainLayout = () => {
 
   return (
     <main className={theme}>
-      <article className="flex h-screen bg-light dark:bg-dark">
+      <article className="flex h-screen bg-gradient">
         <VerticalNavbar />
 
         <section className="flex-1 h-full overflow-auto relative">

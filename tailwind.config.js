@@ -19,13 +19,34 @@ module.exports = {
     colors: {
       transparent: "transparent",
       current: "currentColor",
-      light: "#ffffff",
-      dark: "#191919",
-      primary: "#5941A9",
-      secondary: "#00A7E1",
-      danger: "#FF6B6B",
-      success: "#2EC4B6",
-      warning: "#F2AF29",
+      light: {
+        secondary: "#F2F7F2",
+        DEFAULT: "#ffffff",
+      },
+      dark: {
+        secondary: "#212227",
+        DEFAULT: "#191919",
+      },
+      primary: {
+        light: "#897db3",
+        DEFAULT: "#5941A9",
+      },
+      secondary: {
+        light: "#00A7E125",
+        DEFAULT: "#00A7E1",
+      },
+      danger: {
+        light: "#FF6B6B25",
+        DEFAULT: "#FF6B6B",
+      },
+      success: {
+        light: "#2EC4B625",
+        DEFAULT: "#2EC4B6",
+      },
+      warning: {
+        light: "#F2AF2925",
+        DEFAULT: "#F2AF29",
+      },
       muted: {
         light: "#eeeeee",
         DEFAULT: "#14141515",

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { MenuAccordian } from "../components/accordian";
 import { menu, MenuItem } from "../navigation/menu";
 
@@ -9,6 +9,7 @@ const VerticalNavbar = () => {
 
   const [menuItems, setMenuItems] = useState({} as any);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const separateByGroup = (items: MenuItem[]) => {
@@ -32,29 +33,49 @@ const VerticalNavbar = () => {
     }
   };
 
-  const renderMenuItems = (items: MenuItem[], marginLeft = 0) => {
+  const isSelected = (path: string) => {
+    return location.pathname === path;
+  };
+
+  const renderMenuItems = (items: MenuItem[], paddingLeft = 0) => {
     return items.map((item: MenuItem, index: number) => (
-      <div key={index} className="flex justify-between w-full items-center">
+      <div
+        key={index}
+        className={`flex justify-between w-full items-center relative pl-4 ${
+          isSelected(item.path!) && "bg-primary bg-opacity-10 text-primary"
+        }`}
+      >
+        {isSelected(item.path!) && (
+          <div
+            className={`absolute left-0 top-0 w-2 rounded-r-full h-full bg-primary`}
+          />
+        )}
         {item.children ? (
           <MenuAccordian
             element={
               <div
-                className="flex gap-x-2 items-center"
-                style={{ marginLeft: `${marginLeft}px` }}
+                className="flex gap-x-2 items-center py-1 pl-4"
+                style={{ paddingLeft: `${paddingLeft}px` }}
               >
                 {item.icon && <item.icon className="w-5 h-5" />}
                 {t(`${item.title}`)}
               </div>
             }
-            items={renderMenuItems(item.children, marginLeft + 10)}
+            items={renderMenuItems(item.children, paddingLeft + 10)}
           />
         ) : (
           <div
-            className="flex gap-x-2 items-center cursor-pointer"
+            className={`flex pl-4 flex-1 gap-x-2 items-center cursor-pointer py-2 `}
             onClick={() => navigationHandler(item.path)}
-            style={{ marginLeft: `${marginLeft}px` }}
+            style={{ paddingLeft: `${paddingLeft}px` }}
           >
-            {item.icon && <item.icon className="w-5 h-5" />}
+            {item.icon && (
+              <item.icon
+                className={`w-5 h-5 ${
+                  isSelected(item.path!) && "text-primary stroke-primary"
+                }`}
+              />
+            )}
             {t(`${item.title}`)}
           </div>
         )}
@@ -67,8 +88,8 @@ const VerticalNavbar = () => {
       {Object.keys(menuItems).map((group, index) => (
         <div className="flex flex-col w-full" key={index}>
           {group !== "main" && (
-            <div className={`mb-md ${index > 0 && "mt-2xl"}`}>
-              <h3 className="text-dark dark:text-light opacity-25 text-base">
+            <div className={`mb-md pl-4 ${index > 0 && "mt-2xl"}`}>
+              <h3 className="text-dark dark:text-light opacity-50 font-normal text-base">
                 {group.charAt(0).toUpperCase() + group.slice(1)}
               </h3>
             </div>
